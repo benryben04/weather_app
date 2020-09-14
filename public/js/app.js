@@ -5,7 +5,7 @@ const forecastMsg = document.querySelector('#forecast')
 weatherForm.addEventListener('submit', (e)=>{
     e.preventDefault()
     let location = searchElement.value
-    let url = `http://127.0.0.1:8080/weather?location=${location}`
+    let url = `/weather?location=${location}`
     fetch(url).then((res)=>{
         res.json().then((data)=>{
             if(data.error){
