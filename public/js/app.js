@@ -23,7 +23,9 @@ weatherForm.addEventListener('submit', (e)=>{
             }
         })
     }).catch((error)=>{
-        console.log(error)
+        let errorMsg = document.createElement('p')
+        errorMsg.textContent = error
+        updateMsg(errorMsg, error, true)
     })
 })
 
