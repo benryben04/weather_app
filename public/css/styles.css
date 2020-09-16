@@ -53,3 +53,12 @@ button {
     color: white;
     padding: 8px;
 }
+ 
+a {
+    text-decoration: none;
+    color: gray;
+}
+
+a:hover {
+    color: lightblue;
+}

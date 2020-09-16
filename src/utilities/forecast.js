@@ -21,15 +21,15 @@ const getWeather = (location, callBack)=>{
                 error: res.body.error
             })
         } else {
-            callBack({
-                City: getAccurateResponse(res.body.location.name),
-                Region: getAccurateResponse(res.body.location.region),
-                Country: getAccurateResponse(res.body.location.country),
-                ObservationTime: getAccurateResponse(res.body.current.observation_time),
-                ObservationDate: getAccurateResponse(res.body.location.localtime).substring(0, 10),
-                Temperature: getAccurateResponse(res.body.current.temperature),
-                Description: getAccurateResponse(res.body.current.weather_descriptions)
-            })
+            callBack(
+                // City: getAccurateResponse(res.body.location.name),
+                // Region: getAccurateResponse(res.body.location.region),
+                // Country: getAccurateResponse(res.body.location.country),
+                // ObservationTime: getAccurateResponse(res.body.current.observation_time),
+                // ObservationDate: getAccurateResponse(res.body.location.localtime).substring(0, 10),
+                // Temperature: getAccurateResponse(res.body.current.temperature),
+                // Description: getAccurateResponse(res.body.current.weather_descriptions)
+                res.body)
         }
     })
 }
