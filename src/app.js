@@ -14,7 +14,9 @@ const port = process.env.PORT || 8080
 
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
+
 hbs.registerPartials(partialsPath)
+
 app.use(express.static(indexPath))
 
 app.get('', (req, res)=>{
@@ -45,8 +47,8 @@ app.get('/help/*', (req, res)=>{
     })
 })
 
-app.get('/weather', (req, res)=>{
-    if(!req.query.location){
+app.get('/weather', ({query}, res)=>{
+    if(!query.location){
         return res.send({
             error: 'Please provide a valid search query'
         })
