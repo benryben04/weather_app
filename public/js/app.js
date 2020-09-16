@@ -16,7 +16,7 @@ weatherForm.addEventListener('submit', (e)=>{
                 let forecastLocation = document.createElement('p')
                 forecastLocation.textContent = `${data.City}, ${data.Region}, ${data.Country}`
                 let forecastDescription = document.createElement('p')
-                forecastDescription.textContent = ` and here is some more data: ${JSON.stringify(data)}`
+                forecastDescription.textContent = `It is currently ${data.Temperature}°F and is ${data.Description.toLowerCase()}`
                 updateMsg(forecastLocation, forecastMsg, false)
                 updateMsg(forecastDescription, forecastMsg, true)
                 document.querySelector('input').value = ''
