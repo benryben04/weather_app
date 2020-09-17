@@ -47,10 +47,11 @@ app.get('/help/*', (req, res)=>{
     })
 })
 
-app.get('/weather', ({query}, res)=>{
-    if(!query.location){
-        return res.send({
-            error: 'Please provide a valid search query'
+app.get('/weather', (req, res)=>{
+    if(!req.query.location){
+        return res.render('404', {
+            info: 'Search query not found',
+            info: 'Please enter a valid search query.'
         })
     }
     geocode(req.query.location, (geocodeData)=>{
